@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Table</th>
+        </thead>
+        <tr>
+            <td>
+                <canvas id="myChart4"></canvas>
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        const labels4 = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+        ];
+        const color = [
+          'rgb(25,25,25)',
+          'rgb(25,58,25)',
+          'rgb(25,105,25)',
+          'rgb(25,25,95)',
+          'rgb(95,25,25)',
+          'rgb(35,25,25)',
+        ];
+        const data4 = {
+          labels: labels4,
+          datasets: [
+            {
+                label: 'My First dataset',
+                backgroundColor: color,
+                borderColor: 'rgb(255, 99, 132)',
+                data: [10, 5, 2, 20, 30, 45],
+            },
+        ]
+        };
+            const config4 = {
+                type: 'pie',
+                data: data4,
+                options: {
+                    responsive: true,
+                    plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Pie Chart'
+                    }
+                    }
+                },
+        };
+      </script>
+    <script>
+        const myChart4 = new Chart(document.getElementById('myChart4'),config4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+      <div>
+        <canvas id="myChart1"></canvas>
+      </div>
+      <script>
+        const labels1 = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+        ];
+        const data1 = {
+          labels: labels1,
+          datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+          },{
+            label: 'My Second dataset',
+            backgroundColor: 'rgb(25, 99, 132)',
+            borderColor: 'rgb(25, 99, 132)',
+            data: [0, -3, -5, -9, -20, -30, -45],
+          }]
+        };
+        const config1 = {
+          type: 'doughnut',
+          data: data1,
+          options: {}
+        };
+      </script>
+    <script>
+        const myChart1 = new Chart(document.getElementById('myChart1'),config1);
+    </script>
+   
+<!------------------------------------------------------------Doughnut-------------------------------------------------->
+   <div>
+    <canvas id="myChart2"></canvas>
+  </div>
+  <script>
+    const labels2 = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    const data2 = {
+      labels: labels2,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+  
+    const config2 = {
+      type: 'bar',
+      data: data2,
+      options: {}
+    };
+  </script>
+    <script>
+        const myChart2 = new Chart(document.getElementById('myChart2'),config2);
+    </script>
+<!------------------------------------------------------------Bar-------------------------------------------------->
+<div>
+    <canvas id="myChart3"></canvas>
+  </div>
+  <script>
+    const labels3 = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    const data3 = {
+      labels: labels3,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 5, 5, -50, 10, 30, 45],
+      },
+      {
+        label: 'My Second dataset',
+        backgroundColor: 'rgb(25, 99, 132)',
+        borderColor: 'rgb(25, 99, 132)',
+        data: [0, 10, 5, -50, 20, 30, 45],
+      },
+    ]
+    };
+    const config3 = {
+      type: 'bar',
+      data: data3,
+      options: {}
+    };
+  </script>
+    <script>
+        const myChart3 = new Chart(document.getElementById('myChart3'),config3);
+    </script>
+<!------------------------------------------------------------Vertical Bar-------------------------------------------------->
+<div>
+    <canvas id="myChart4"></canvas>
+  </div>
+  <script>
+    const labels4 = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    const color = [
+      'rgb(25,25,25)',
+      'rgb(25,58,25)',
+      'rgb(25,105,25)',
+      'rgb(25,25,95)',
+      'rgb(95,25,25)',
+      'rgb(35,25,25)',
+    ];
+    const data4 = {
+      labels: labels4,
+      datasets: [
+        {
+            label: 'My First dataset',
+            backgroundColor: color,
+            borderColor: 'rgb(255, 99, 132)',
+            data: [10, 5, 2, 20, 30, 45],
+        },
+    ]
+    };
+        const config4 = {
+            type: 'pie',
+            data: data4,
+            options: {
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Pie Chart'
+                }
+                }
+            },
+    };
+  </script>
+<script>
+    const myChart4 = new Chart(document.getElementById('myChart4'),config4);
+</script>
+<!------------------------------------------------------------Pie-------------------------------------------------->
+<div>
+  <canvas id="myChart5"></canvas>
+</div>
+<script>
+  const labels5 = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+  const color1 = [
+    'rgb(25,25,25)',
+    'rgb(25,58,25)',
+    'rgb(25,105,25)',
+    'rgb(25,25,95)',
+    'rgb(95,25,25)',
+    'rgb(35,25,25)',
+  ];
+  const data5 = {
+    labels: labels5,
+    datasets: [
+      {
+          label: 'Daily Output Plan (pcs.)',
+          backgroundColor: color1,
+          borderColor: 'rgb(255, 99, 132)',
+          data: [10, 5, 2, 20, 30, 45],
+          stack: 'combined',
+          type: 'bar'
+      },
+      {
+          label: 'Daily Accuum (pcs.)',
+          backgroundColor: color1,
+          borderColor: 'rgb(25, 99, 132)',
+          data: [60,10,10,10,10,10,10],
+          stack: 'combined'
+      },
+  ]
+  };
+  const config5 = {
+  type: 'line',
+  data: data5,
+  options: {
+    elements: {
+                            point:{
+                                radius: 0
+                            }
+                        },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Stacked Line/Bar Chart'
+      }
+    },
+    scales: {
+      y: {
+        // stacked: true
+      }
+    }
+  },
+};
+       
+</script>
+<script>
+  const myChart5 = new Chart(document.getElementById('myChart5'),config5);
+</script>
+
+
+<!------------------------------------------------------------Line------------------------------------------------->
+</body>
+</html>
